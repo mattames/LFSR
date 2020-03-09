@@ -10,7 +10,7 @@ int main(void)
     
     for(cnt=0;cnt<64;cnt++)
     {
-	// Polynomial is C(x) = 1 + x^15 + x^27 + x^38 + x^46 + x^62 + x^64
+        // Polynomial is C(x) = x^64 + x^62 + x^46 + x^38 + x^27 + x^15 + 1
         uint64_t bit  = ((lfsr >> 63) ^ (lfsr >> 61) ^ (lfsr >> 45) ^ (lfsr >> 37) ^ (lfsr >> 26) ^ (lfsr >> 14)) & 0x1;
         lfsr =  (lfsr << 1) | (bit);
         printf("shift #%i, 0x%016llx\n", (cnt+1), lfsr);

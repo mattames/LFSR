@@ -10,7 +10,7 @@ int main(void)
  
     for(cnt=0;cnt<32;cnt++)
     {
-	// Polynomial is C(x) = 1 + x^2 + x^4 + x^32
+	// Polynomial is C(x) = x^32 + x^4 + x^2 + 1
         uint32_t bit  = ((lfsr >> 31) ^ (lfsr >> 3) ^ (lfsr >> 1)) & 0x1;
         lfsr =  (lfsr << 1) | (bit);
         printf("shift #%i, 0x%08x\n", (cnt+1), lfsr);
